@@ -35,6 +35,11 @@ class RSSFeed {
                 length: item.torrentFileLength,
                 type: 'application/x-bittorrent'
               }),
+              tag('link', { children: item.torrentFileUrl }),
+              tag('media:hash', { 
+                algo: 'sha1',
+                children: item.hash 
+              })
             ]
           }))
         ]

@@ -1,6 +1,6 @@
 # bittorrent-rss-feed
 
-Generates RSS feeds for BitTorrent files to automate downloads. This module tries to be as lightweight and quick as possible, which is why there are zero dependencies.
+Generates RSS feeds for BitTorrent files to automate downloads. This module tries to be as lightweight and quick as possible, which is why there are zero dependencies. It also tries to follow [BEP 36](http://www.bittorrent.org/beps/bep_0036.html) as close as possible.
 
 ## Usage
 
