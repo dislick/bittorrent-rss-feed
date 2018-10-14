@@ -1,15 +1,4 @@
-const tag = (tag, props) => {
-  let propList = [];
-  for (let prop in props) {
-    if (props.hasOwnProperty(prop) && prop !== 'children') {
-      propList.push(`${prop}="${props[prop]}"`);
-    }
-  }
-  if (Array.isArray(props.children)) {
-    props.children = props.children.join('');
-  }
-  return `<${tag}${propList.length > 0 ? ' ' : ''}${propList.join(' ')}>${props.children || ''}</${tag}>`;
-};
+const tag = require('./xml_generator');
 
 class RSSFeed {
   constructor(options) {
