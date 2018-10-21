@@ -28,7 +28,7 @@ class RSSFeed {
           tag('link', { children: this.options.link }),
           tag('ttl', { children: this.options.ttl }),
           tag('description', { children: this.options.description }),
-          this.items.map(item => tag('item', {
+          ...this.items.map(item => tag('item', {
             children: [
               tag('title', { children: item.title }),
               tag('pubDate', { children: item.pubDate }),
