@@ -1,5 +1,7 @@
 const tag = require('./xml_generator');
 
+const preamble = '<?xml version="1.0" encoding="UTF-8"?>';
+
 class RSSFeed {
   constructor(options) {
     this.items = [];
@@ -18,12 +20,14 @@ class RSSFeed {
   }
 
   getXML() {
-    return tag('rss', {
+    return preamble + tag('rss', {
       version: '2.0',
       children: tag('channel', {
         children: [
           tag('title', { children: this.options.title }),
           tag('link', { children: this.options.link }),
+          tag('ttl', { children: this.options.ttl }),
+          tag('description', { children: this.options.description }),
           this.items.map(item => tag('item', {
             children: [
               tag('title', { children: item.title }),
